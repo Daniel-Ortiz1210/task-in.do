@@ -1,6 +1,6 @@
 # Task-in.do
 
-Web app to add, update, check and delete task provided by the user
+Web app to add, update, check and delete tasks provided by the user
 
 📍**Features / User can:**
 
