@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+{% extends '_base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Login
+{% endblock title %}
+
+{% block content %}
+    <div class="login_form">
+        <header>
+            <h1 class="login_txt">Inicia sesión</h1>
+        </header>
+        {{ login_form.hidden_tag() }}
+        {{ wtf.quick_form(login_form, method='POST') }}
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div>
+            <p>¿No tienes una cuenta? <a href="{{ url_for('signup') }}" class="signup_link">Crea una cuenta aquí</a></p>
+        </div>  
+    </div>
+{% endblock content %}

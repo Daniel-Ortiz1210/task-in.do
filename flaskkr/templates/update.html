@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% if current_user.is_authenticated %}
+    {% block title %}
+        {{ super() }}
+        Update
+    {% endblock title %}
+{% endif %}
+
+{% block content %}
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+        {% if category == 'success' %}
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{ message }}
+        </div> 
+        {% else %}
+            {{ message }}
+        {% endif %}
+    {% endfor %}
+    <div>
+        <h1>Actualiza tu información</h1>
+    </div>
+    {{ update_form.hidden_tag() }}
+    {{ wtf.quick_form(update_form) }}
+{% endblock content %}

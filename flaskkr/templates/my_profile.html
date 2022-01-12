@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+
+{% if current_user.is_authenticated %}
+    {% block title %}
+        {{ super() }}
+        Mi perfil
+    {% endblock title %}
+{% endif %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class="jumbotron">
+            <h1>Bienvenido {{ current_user.name }}!</h1>
+            <p>Un placer que estés devuelta</p>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><a href="{{ url_for('add_todo', username=current_user.username) }}">Agregar una tarea nueva</a></button>
+                <button type="button" class="btn btn-default"><a href="{{ url_for('update', username=current_user.username) }}">Actualizar mis datos</a></button>
+                <button type="button" class="btn btn-default"><a href="{{ url_for('update_password', username=current_user.username ) }}">Actualizar mi contraseña</a></button>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+

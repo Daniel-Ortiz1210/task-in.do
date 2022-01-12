@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+{% extends '_base.html' %}
+
+{% block title %}
+    {{ super() }}
+    Home
+{% endblock title %}
+
+
+{% block content %}
+    <h1>Sistema de autenticación de usuarios con Flask</h1>
+    <div>
+        <h3>Funcionalidades</h3>
+        <ul>
+            <li>Inicio de sesión y registro de nuevos usuarios</li>
+            <li>Cerrar sesión de usuario</li>
+            <li>Actualizar datos del usuario</li>
+            <li>Consultar tu propia información</li>
+            <li>Ver información no sensible de otros usuarios</li>
+        </ul>
+        <h3>Tech Stack</h3>
+        <ul>
+            <li>Flask</li>
+            <li>Python</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Flask WTF</li>
+            <li>Flask Login</li>
+            <li>Flask Bootstrap</li>
+            <li>SQL Alchemy</li>
+            <li>Werkzeug</li>
+        </ul>
+    </div>
+{% endblock content %}

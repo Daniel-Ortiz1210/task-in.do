@@ -1,0 +1,80 @@
+{% extends '_base.html' %}
+
+{% if current_user.is_authenticated %}
+    {% block title %}
+        {{ super() }}
+        Dashboard
+    {% endblock title %}
+{% endif %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        {% for category, message in get_flashed_messages(with_categories=True) %}
+            {% if category == 'success' %}
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <h2>Estas son tus tareas pendientes:</h2>
+
+        {% for todo in todos %}
+            {% if todo.status == 'pendiente' %}
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="font-weight: 700;">Fecha de creación: {{ todo.creation_date.strftime('%A') }}, {{ todo.creation_date.strftime('%d') }} - {{ todo.creation_date.strftime('%B') }} - {{todo.creation_date.strftime('%Y') }}</h3>
+                </div>
+                <div class="panel-body">
+                    {{ todo.description }}
+                </div>
+                <!-- Single button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ver más <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                    <li><a href="{{ url_for('check_todo', todo_id=todo.id) }}">Marcar como terminado</a></li>
+                    <li><a href="{{ url_for('update_todo', todo_id=todo.id) }}">Editar</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{{ url_for('delete_todo', todo_id=todo.id) }}">Eliminar</a></li>                    
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+        <h2>Estas son tus tareas terminadas:</h2>
+        
+        {% for todo in todos %}
+            {% if todo.status == 'terminado' %}
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="font-weight: 700;">Fecha de creación: {{ todo.creation_date.strftime('%A') }}, {{ todo.creation_date.strftime('%d') }} - {{ todo.creation_date.strftime('%B') }} - {{todo.creation_date.strftime('%Y') }}</h3>
+                </div>
+                <div class="panel-body">
+                    {{ todo.description }}
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ver más <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                    <li><a href="{{ url_for('pending_todo', todo_id=todo.id) }}">Marcar como pendiente</a></li>
+                    <li><a href="{{ url_for('update_todo', todo_id=todo.id) }}">Editar</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{{ url_for('delete_todo', todo_id=todo.id) }}">Eliminar</a></li>                    
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default"><a href="{{ url_for('add_todo', username=current_user.username) }}">Agregar una tarea nueva</a></button>
+        </div>
+    {% endif %}
+{% endblock content %}
+

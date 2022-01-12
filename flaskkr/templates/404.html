@@ -1,0 +1,11 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    {{ super() }}
+    404
+{% endblock title %}
+
+{% block content %}
+    ¡Ups, esto no es lo que buscabas!
+    <button><a href="{{ url_for('login') }}">Incia sesión aquí para accceder</a></button>
+{% endblock content %}  

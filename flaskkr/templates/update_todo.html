@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Actualizar todo
+{% endblock title %}
+
+{% block content %}
+    {{ form.hidden_tag() }}
+    {{ wtf.quick_form(form, method='POST') }}
+{% endblock content %}

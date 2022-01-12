@@ -1,0 +1,23 @@
+{% if current_user.is_authenticated %}
+    <nav>
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="{{ url_for('index') }}">Home</a></li>
+            <li role="presentation"><a href="{{ url_for('dashboard', username=current_user.username) }}">Mis tareas <span class="badge">{{ total_todos }}</span></a></li>
+            <li role="presentation"><a href="{{ url_for('my_profile', username=current_user.username) }}">Mi perfil</a></li>
+            <li role="presentation"><a href="{{ url_for('log_out') }}">Cerrar sesión</a></li>
+        </ul>
+    </nav>
+{% else %}
+    <nav>
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" class="active"><a href="{{ url_for('index') }}">Home</a></li>
+            <li role="presentation"><a href="{{ url_for('login') }}">Inicia sesión</a></li>
+            <li role="presentation"><a href="{{ url_for('signup') }}">Regístrate</a></li>
+        </ul>
+    </nav>
+{% endif %}
+
+
+
+
+

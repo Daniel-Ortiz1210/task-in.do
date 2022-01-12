@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% if current_user.is_authenticated %}
+    {% block title %}
+        {{ super() }}
+        Users
+    {% endblock title %}
+{% endif %}
+
+
+{% block content %}
+    {% for user in users %}
+        <p>Id: {{ user.id }}</p>
+        <p>Nombre: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>------------------------------</p>
+    {% endfor %}
+{% endblock content %}
