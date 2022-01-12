@@ -1,17 +1,17 @@
 # Task-in.do
 
-Web app para agregar, editar, completar y eliminar tareas
+Web app to add, update, check and delete task provided by the user
 
-📍**El usuario puede / Funcionalidades:**
+📍**Features / User can:**
 
-- Hacer signup
-- Hacer login
-- Cerrar sesión
-- Actualizar de forma segura datos sensibles (email, password, username y nombre)
-- Agregar nuevas tareas en el dashboard
-- Editar el status de tareas (pendiente/terminado)
-- Eliminar por completo tareas
-- Editar la descripción de tareas
+- Signup
+- Login
+- Logout
+- Update sensible data (email, password, username y nombre)
+- Add new todos in his dashboard
+- Update todos status (pending <-> todo)
+- Delete todos
+- Update todos description
 
 💻**Tech Stack:**
 
@@ -24,8 +24,8 @@ Web app para agregar, editar, completar y eliminar tareas
 - Flask Login
 - Flask Bootstrap
 
-📌 Estado del proyecto - Enero 2022:
+📌 Overall status - Jan 2022:
 
-- Se está trabajando en mejorar la interfaz del dashboard
+- I´m working to improve the dashboard UX and design
 - Permitir al usuario establecer y editar due dates de cada una de sus tareas
 - Carga de archivos estáticos a cada tarea y a su propio perfil
