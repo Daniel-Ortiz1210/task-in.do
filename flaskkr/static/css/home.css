@@ -1,0 +1,14 @@
+h1 {
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+}
+
+div h3 {
+    color: black;
+    font-weight: bold;
+}
+
+div {
+    text-align: center;
+}

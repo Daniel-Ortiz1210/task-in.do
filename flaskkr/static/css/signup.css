@@ -1,0 +1,15 @@
+.signup_txt {
+    color: red;
+}
+
+.login_link {
+    text-decoration: underline;
+    color: blue;
+}
+
+.signup_form {
+    max-width: 400px;
+    margin: 0 auto 0 auto;
+    border: black solid 1px;
+    padding: 15px;
+}
