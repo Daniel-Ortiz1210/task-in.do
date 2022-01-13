@@ -24,20 +24,26 @@ Web app to add, update, check and delete tasks provided by the user
 - Flask Login
 - Flask Bootstrap
 
-
 **How to run:**
-
-**First, you should make a folder named /task-in.do**
+Windows
 
 Inside this folder, follow the next steps to run the project
 
-- Create a virtual env, windows terminal: py -m venv env
-- Activate virtualenv: .\env\Scripts\activate
-- Install packages: py -m pip install -r requirements.txt
-- Set flask app: set FLASK_APP=flaskkr
-- Set flask env: set FLASK_ENV=development
+- Create a virtual env, windows terminal: `py -m venv env`
+- Activate virtualenv: `.\env\Scripts\activate`
+- Install packages: `py -m pip install -r requirements.txt`
+- Set flask app: `set FLASK_APP=flaskkr`
+- Set flask env: `set FLASK_ENV=development`
 - Run server: flask run
 
+Mac
+
+- Create a virtual env: `python3 -m venv venv`
+- Activate virtualenv: `source venv/bin/activate`
+- Install packages: `python3 -m pip install -r requirements.txt`
+- Set flask app: `export FLASK_APP=flaskkr`
+- Set flask env: `export FLASK_ENV=development`
+- Run server: `flask run`
 
 📌 Overall status - Jan 2022:
 
