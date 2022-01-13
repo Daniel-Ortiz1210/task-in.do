@@ -25,7 +25,7 @@ Web app to add, update, check and delete tasks provided by the user
 - Flask Bootstrap
 
 
-*How to run: /task-in.do*
+**How to run: /task-in.do**
 
 Create a virtual env, windows terminal: py -m venv env
 Activate virtualenv: .\env\Scripts\activate
