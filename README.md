@@ -27,12 +27,12 @@ Web app to add, update, check and delete tasks provided by the user
 
 **How to run: /task-in.do**
 
-Create a virtual env, windows terminal: py -m venv env
-Activate virtualenv: .\env\Scripts\activate
-Install packages: py -m pip install -r requirements.txt
-Set flask app: set FLASK_APP=flaskkr
-Set flask env: set FLASK_ENV=development
-Run server: flask run
+- Create a virtual env, windows terminal: py -m venv env
+- Activate virtualenv: .\env\Scripts\activate
+- Install packages: py -m pip install -r requirements.txt
+- Set flask app: set FLASK_APP=flaskkr
+- Set flask env: set FLASK_ENV=development
+- Run server: flask run
 
 
 📌 Overall status - Jan 2022:
